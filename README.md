@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# Chrome-extension
+
+>>>>>>> 36338bec111cf458f7c69b2e10a2cd0058076f61
 //currently learning about local storage
 //local storage is a way to store data in the browser and it will stay there even if you refresh the page
 
@@ -27,3 +32,9 @@ myLeads.push("www.ben.com")
 myLeads = JSON.stringify(myLeads)
 // 4. Console.log the string using typeof to verify that it's a string
 console.log(typeof myLeads)
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 36338bec111cf458f7c69b2e10a2cd0058076f61
