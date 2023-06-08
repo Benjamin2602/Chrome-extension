@@ -11,6 +11,9 @@ input{
     box-sizing: border-box;
     border: 1px solid #351ae6;
     margin-bottom: 4px;
+    resize: vertical;
+    font-size: 16px;
+    
 }
 
 button{
@@ -27,6 +30,7 @@ ul {
     margin-top: 20px;
     list-style: none;
     padding-left: 0;
+
 }
 
 li {

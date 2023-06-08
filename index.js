@@ -1,49 +1,31 @@
 
 
+let leads = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
-let leads = []
 const ulEl = document.getElementById('ul-el')
 
-//currently learning about local storage
-//local storage is a way to store data in the browser and it will stay there even if you refresh the page
-
-//to save the item in local storage
-localStorage.setItem('myLeads', 'www.examplelead.com')
-
-//to get the item from local storage
-localStorage.getItem('myLeads') 
-
-//to check the item in the console
-console.log(localStorage.getItem('myLeads'))
-
-//to remove the item from local storage
-localStorage.clear()
-
-
 //to save the array in local storage
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem('Leads'))
+console.log(leadsFromLocalStorage)
 
-let myLeads = `["www.awesomelead.com"]`
-
-// 1. Turn the myLeads string into an array
-myLeads = JSON.parse(myLeads)
-
-// 2. Push a new value to the array
-myLeads.push("www.ben.com")
-// 3. Turn the array into a string again
-myLeads = JSON.stringify(myLeads)
-// 4. Console.log the string using typeof to verify that it's a string
-console.log(typeof myLeads)
-
-
+// if leadFromLocalStorage is truthy (it exists) then set the leads variable to that value
+if(leadsFromLocalStorage){
+    leads = leadsFromLocalStorage
+    renderLead()
+}
 
 
 inputBtn.addEventListener('click', function() {
 leads.push(inputEl.value)
 //clearing the input field after adding the value to the array
-
 inputEl.value = ""
+//to save the item in local storage
+localStorage.setItem('Leads', JSON.stringify(leads))
 renderLead()
+
+//to get the item from local storage
+console.log(localStorage.getItem('Leads'))
 })
 
 function renderLead(){
