@@ -4,6 +4,7 @@ let leads = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el')
+const deleteBtn = document.getElementById('delete-btn')
 
 //to save the array in local storage
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem('Leads'))
@@ -15,6 +16,14 @@ if(leadsFromLocalStorage){
     renderLead()
 }
 
+deleteBtn.addEventListener('dblclick', function(){
+    //clearing the local storage
+    localStorage.clear()
+    //clearing the array
+    leads = []
+    //clearing the dom by rendering the empty array
+    renderLead()
+})
 
 inputBtn.addEventListener('click', function() {
 leads.push(inputEl.value)
